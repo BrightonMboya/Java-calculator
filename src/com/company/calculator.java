@@ -14,7 +14,9 @@ public class calculator implements ActionListener{
 
     Font myFont = new Font("Ink Free", Font.BOLD, 30);
 
-    double num1 = 0, num2=0, result=0;
+    double num1 = 0;
+    double num2=0;
+    double result=0;
     char operator;
     calculator(){
 //        initialzing a frame
@@ -108,6 +110,22 @@ public class calculator implements ActionListener{
         calculator calc = new calculator();
     }
 
+    public Double add (Double num1, Double num2) {
+        return num1 + num2;
+    };
+
+    public Double substract (Double num1, Double num2) {
+        return num1 - num2;
+    };
+
+    public Double multiply (Double num1, Double num2) {
+        return num1 * num2;
+    };
+
+    public  Double divide (Double num1, Double num2) {
+        return  num1 / num2;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 //        adding functionalities to the buttons
@@ -149,16 +167,16 @@ public class calculator implements ActionListener{
 
             switch (operator) {
                 case'+':
-                    result =  num1 + num2;
+                    result =  add(num1,  num2);
                     break;
                 case'-':
-                    result =  num1 - num2;
+                    result =  substract(num1, num2);
                     break;
                 case'*':
-                    result =  num1 * num2;
+                    result =  multiply(num1, num2);
                     break;
                 case'/':
-                    result =  num1 / num2;
+                    result =  divide(num1, num2);
                     break;
             }
             textField.setText(String.valueOf(result));
